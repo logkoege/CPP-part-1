@@ -30,7 +30,7 @@ void	Phonebook::Search_Contact()
 {
 	std::string	str;
 	if (ContactCount == 0)
-		std::cout << "U have no friends bozo" << std::endl;
+		std::cout << "no contact" << std::endl;
 	else
 		{
 			std::cout << "_____________________________________________" << std::endl;
@@ -65,7 +65,7 @@ void	Phonebook::Search_Contact()
 				if (std::atoi(str.c_str()) >= 0 && std::atoi(str.c_str()) < j)
 					Contacts[std::atoi(str.c_str())].Display_Contact();
 				else
-					std::cout << "it does not exist" << std::endl;
+					std::cout << "it doesn't exist" << std::endl;
 			}
 			else
 				std::cout << "unknown index" << std::endl;

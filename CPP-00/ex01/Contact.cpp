@@ -18,7 +18,12 @@ std::string	Contact::Test_Error(std::string str)
 	long unsigned int i = 0;
 	std::getline(std::cin, str);
 	while(str.empty())
-	{
+	{	
+		if (!std::cin)
+		{
+			std::cout << "ctrl D" << std::endl;
+			exit(0);
+		}
 		std::cout << "You can't put empty string" << std::endl;
 		std::getline(std::cin, str);
 	}
