@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: logkoege <logkoege@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/20 18:01:36 by logkoege          #+#    #+#             */
-/*   Updated: 2025/05/20 18:42:51 by logkoege         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef ZOMBIE_HPP
 # define ZOMBIE_HPP
 
@@ -22,12 +10,12 @@ private:
 	std::string name;
 
 public:
-	Zombie(std::string name);
+	Zombie(std::string str);
 	~Zombie();
-	void announce();
-	
-	static Zombie* newZombie(std::string name); // heap
-	static void randomChump(std::string name); // stack
+	void	announce();
 };
+
+void	randomChump(std::string str); // stack
+Zombie*	newZombie(std::string str); // heap
 
 #endif

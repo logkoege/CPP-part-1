@@ -1,18 +1,6 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: logkoege <logkoege@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/20 18:01:24 by logkoege          #+#    #+#             */
-/*   Updated: 2025/05/21 17:00:38 by logkoege         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "Zombie.hpp"
 
-Zombie* newZombie(std::string name)
+Zombie* newZombie(std::string str)
 {
-	return new Zombie(name);
+	return new Zombie(str);
 }

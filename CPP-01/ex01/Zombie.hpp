@@ -6,7 +6,7 @@
 /*   By: logkoege <logkoege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 13:48:23 by logkoege          #+#    #+#             */
-/*   Updated: 2025/05/21 17:55:38 by logkoege         ###   ########.fr       */
+/*   Updated: 2025/08/22 14:45:58 by logkoege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,16 @@
 # include <string>
 # include <iostream>
 
-
-
 class Zombie
 {
 private:
 	std::string name;
 
 public:
-	Zombie* zombieHorde(int N, std::string name);
 	void	announce();
 	void	setname(std::string name);
-};	
+};
 
+Zombie*	zombieHorde(int N, std::string name);
 
 #endif

@@ -1,10 +1,8 @@
-NAME = horde
+NAME = brain
 CC = g++
-SRC = main.cpp\
-		zombieHorde.cpp\
-		Zombie.cpp\
+SRC = main.cpp
 
-CPPFLAGS = -Werror -Wall -Wextra -std=c++98 -g
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 OBJ = $(SRC:.cpp=.o)
 
