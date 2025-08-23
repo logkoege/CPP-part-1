@@ -6,15 +6,15 @@
 /*   By: logkoege <logkoege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 21:27:36 by logkoege          #+#    #+#             */
-/*   Updated: 2025/08/19 15:51:09 by logkoege         ###   ########.fr       */
+/*   Updated: 2025/08/23 18:17:09 by logkoege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
+# include "Contact.hpp"
 # include <iostream>
 # include <iomanip>
-# include "Contact.hpp"
 # include <cstring>
 # include <cstdlib>
 # include <string>

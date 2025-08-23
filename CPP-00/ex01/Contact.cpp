@@ -6,7 +6,7 @@
 /*   By: logkoege <logkoege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 16:18:55 by logkoege          #+#    #+#             */
-/*   Updated: 2025/08/19 16:37:03 by logkoege         ###   ########.fr       */
+/*   Updated: 2025/08/23 17:58:08 by logkoege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,6 @@ std::string	Contact::Test_Error(std::string str)
 
 void	Contact::Set_Contact()
 {
-	Nickname.clear();
-	Phone_Number.clear();
-	Darkest_Secret.clear();
 	std::cout << "First Name :" << std::endl;
 	First_Name = Test_Error(First_Name);
 	if (!std::cin)

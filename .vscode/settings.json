@@ -46,6 +46,17 @@
 		"sstream": "cpp",
 		"stdexcept": "cpp",
 		"streambuf": "cpp",
-		"typeinfo": "cpp"
+		"typeinfo": "cpp",
+		"charconv": "cpp",
+		"chrono": "cpp",
+		"map": "cpp",
+		"optional": "cpp",
+		"ratio": "cpp",
+		"format": "cpp",
+		"fstream": "cpp",
+		"span": "cpp",
+		"text_encoding": "cpp",
+		"cinttypes": "cpp",
+		"variant": "cpp"
 	}
 }
