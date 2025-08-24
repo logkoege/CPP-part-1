@@ -12,11 +12,10 @@ private:
 
 public:
 	Fixed();
-	~Fixed();
 	Fixed(Fixed &other);
+	~Fixed();
 	Fixed	&operator=(Fixed &other);
 	int		getRawBits();
-	void	setRawBits(int raw);
 
 };
 

@@ -22,12 +22,6 @@ int Fixed::getRawBits()
 	return value;
 }
 
-void Fixed::setRawBits(int raw)
-{
-	std::cout << "setRawBits member function called" << std::endl;
-	value = raw;
-}
-
 Fixed& Fixed::operator=(Fixed& other)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
