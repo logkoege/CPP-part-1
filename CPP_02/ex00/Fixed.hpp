@@ -7,10 +7,16 @@
 class Fixed
 {
 private:
-
+	int value;
+	int fractionalBits;
 
 public:
-	int	getRawBits();
+	Fixed();
+	~Fixed();
+	Fixed(Fixed &other);
+	Fixed	&operator=(Fixed &other);
+	int		getRawBits();
+	void	setRawBits(int raw);
 
 };
 
