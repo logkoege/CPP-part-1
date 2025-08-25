@@ -3,21 +3,28 @@
 
 # include <string>
 # include <iostream>
+# include <cmath>
+
 
 class Fixed
 {
 private:
-	float value;
-	int fractionalBits;
+	int value;
+	static const int fractionalBits = 8;
 
 public:
 	Fixed();
-	Fixed(int n);
-	Fixed(Fixed &other);
+	Fixed(const float f);
+	Fixed(const int n);
+	Fixed(const Fixed &other);
 	~Fixed();
-	Fixed	&operator=(Fixed &other);
-	int		getRawBits();
-	Fixed&	Fixed::toInt(Fixed &other);
+	int		toInt(void)const;
+	float	toFloat(void)const;
+	Fixed	&operator=(Fixed const &other);
+	void	setRawBits(int const raw);
+	int		getRawBits()const;
+	
 };
+std::ostream &operator<<(std::ostream &out, const Fixed &fixed);
 
 #endif
