@@ -1,5 +1,4 @@
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#pragma once
 
 # include <string>
 # include <iostream>
@@ -18,4 +17,3 @@ public:
 void	randomChump(std::string str); // stack
 Zombie*	newZombie(std::string str); // heap
 
-#endif

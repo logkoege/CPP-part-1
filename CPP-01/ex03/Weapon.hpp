@@ -1,5 +1,4 @@
-#ifndef WEAPOND_HPP
-# define WEAPOND_HPP
+#pragma once
 
 # include <string>
 # include <iostream>
@@ -14,4 +13,3 @@ public:
 	std::string& getType();
 	void setType(std::string str);
 };
-#endif

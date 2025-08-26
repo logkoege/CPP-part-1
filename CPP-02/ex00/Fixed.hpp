@@ -1,5 +1,4 @@
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#pragma once
 
 # include <string>
 # include <iostream>
@@ -19,5 +18,3 @@ public:
 	int		getRawBits();
 
 };
-
-#endif
