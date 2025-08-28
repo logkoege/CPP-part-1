@@ -6,6 +6,9 @@ HumanB::HumanB(std::string n) : name(n), weapon(nullptr)
 HumanB::~HumanB()
 {}
 
+HumanB::HumanB()
+{}
+
 void HumanB::attack()
 {
 	if (weapon)
