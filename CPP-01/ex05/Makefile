@@ -1,9 +1,7 @@
-NAME = Zombie
+NAME = Harl
 CC = g++
 SRC = main.cpp\
-		newZombie.cpp\
-		Zombie.cpp\
-		randomChump.cpp
+	Harl.cpp\
 
 CPPFLAGS = -Werror -Wall -Wextra -std=c++98 -g
 
@@ -12,7 +10,7 @@ OBJ = $(SRC:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CPPFLAGS) $(OBJ) $(MLX) -o $(NAME)
+	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
 clean:
 	rm -f $(OBJ)

@@ -1,6 +1,6 @@
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string str) : name(str)
+Zombie::Zombie(std::string name) : name(name)
 {
 	std::cout << "creation of " << name << std::endl;
 }
@@ -12,5 +12,5 @@ Zombie::~Zombie()
 
 void Zombie::announce()
 {
-	std::cout << this->name << ": IBraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }

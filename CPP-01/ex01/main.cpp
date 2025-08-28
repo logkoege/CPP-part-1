@@ -15,7 +15,6 @@
 int	main(void)
 {
 	Zombie *horde = zombieHorde(5, "abderzombie");
-	horde->announce();
 	delete [] horde;
 	return (0);
 }

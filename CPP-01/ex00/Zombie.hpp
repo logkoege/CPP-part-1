@@ -9,11 +9,11 @@ private:
 	std::string name;
 
 public:
-	Zombie(std::string str);
+	Zombie(std::string name);
 	~Zombie();
 	void	announce();
 };
 
-void	randomChump(std::string str); // stack
-Zombie*	newZombie(std::string str); // heap
+void	randomChump(std::string name); // stack
+Zombie*	newZombie(std::string name); // heap
 

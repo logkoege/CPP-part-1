@@ -7,7 +7,7 @@ int main(int argc, char **argv)
 	if (argc != 4)
 	{
 		std::cout << "Error: arg != 4" << std::endl;
-		return (0);
+		return (1);
 	}
 	std::string filename = argv[1];
 	std::string s1 = argv[2];
@@ -24,7 +24,7 @@ int main(int argc, char **argv)
 	while (std::getline(infile, line))
 	{
 		result = "";
-		for (long unsigned int i = 0; i < line.size();)
+		for (size_t i = 0; i < line.size();)
 		{
 			if (line.compare(i, s1.size(), s1) == 0)
 			{
