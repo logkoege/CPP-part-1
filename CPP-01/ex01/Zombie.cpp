@@ -12,6 +12,16 @@
 
 #include "Zombie.hpp"
 
+Zombie::Zombie()
+{
+	std::cout << "Constructor called" << std::endl;
+}
+
+Zombie::~Zombie()
+{
+	std::cout << "Destructor called" << std::endl;
+}
+
 void	Zombie::setname(std::string str)
 {
 	name = str;

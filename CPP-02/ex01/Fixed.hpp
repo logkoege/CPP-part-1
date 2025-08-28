@@ -21,7 +21,7 @@ public:
 	float	toFloat(void)const;
 	Fixed	&operator=(Fixed const &other);
 	void	setRawBits(int const raw);
-	int		getRawBits()const;
+	int		getRawBits() const;
 	
 };
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed);

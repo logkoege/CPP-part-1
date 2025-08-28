@@ -6,10 +6,10 @@ Fixed::Fixed() : value(0)
 	std::cout << "Default construtor called" << std::endl;
 }
 
-Fixed::Fixed(Fixed &other)
+Fixed::Fixed(const Fixed &other)
 {
 	std::cout << "Copy constuctor called" << std::endl;
-	this->value = other.getRawBits();
+	value = other.getRawBits();
 }
 
 Fixed::~Fixed()
@@ -17,7 +17,7 @@ Fixed::~Fixed()
 	std::cout << "destructor called" << std::endl;
 }
 
-int Fixed::getRawBits()
+int Fixed::getRawBits() const
 {
 	std::cout << "getRawBits member function called" << std::endl;
 	return this->value;
