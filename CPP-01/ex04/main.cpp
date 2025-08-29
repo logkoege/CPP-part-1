@@ -26,6 +26,11 @@ int main(int argc, char **argv)
 		result = "";
 		for (size_t i = 0; i < line.size();)
 		{
+			if (s1 == "" || s2 == "")
+			{
+				result += line[i];
+				i++;
+			}
 			if (line.compare(i, s1.size(), s1) == 0)
 			{
 				result += s2;
