@@ -17,7 +17,8 @@ void Harl::error(void)
 	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
-void Harl::complain(std::string level) {
+void Harl::complain(std::string level)
+{
 	HarlTab ftab[4] = {{"DEBUG", &Harl::debug},
 					{"INFO", &Harl::info},
 					{"WARNING", &Harl::warning},

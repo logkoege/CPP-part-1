@@ -1,6 +1,9 @@
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 
+Weapon::Weapon()
+{}
+
 Weapon::Weapon(std::string str) : type(str)
 {}
 
