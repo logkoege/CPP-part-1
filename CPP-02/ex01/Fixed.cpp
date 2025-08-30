@@ -36,14 +36,14 @@ Fixed::Fixed(const float f)
 Fixed::Fixed(const Fixed &other)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	this->value = other.getRawBits();
+	this->value = other.value;
 }
 
 Fixed &Fixed::operator=(const Fixed &other)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &other)
-		this->value = other.getRawBits();
+		this->value = other.value;
 	return *this;
 }
 

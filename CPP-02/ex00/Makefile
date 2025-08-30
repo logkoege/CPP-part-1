@@ -1,4 +1,4 @@
-NAME = numb
+NAME = Fixed
 CC = g++
 SRC = main.cpp\
 		Fixed.cpp
