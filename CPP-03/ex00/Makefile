@@ -1,4 +1,4 @@
-NAME = pine2
+NAME = ClapTrap
 CC = g++
 SRC = main.cpp\
 	ClapTrap.cpp\

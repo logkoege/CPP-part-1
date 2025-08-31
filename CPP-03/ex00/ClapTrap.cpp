@@ -1,5 +1,14 @@
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap() :
+name("ClapTrap"),
+Hit_points(10),
+Energy_points(10),
+Attack_damage(0)
+{
+
+}
+
 ClapTrap::ClapTrap(std::string str) :
 name(str),
 Hit_points(10),
@@ -47,7 +56,7 @@ void ClapTrap::attack(const std::string& target)
 	std::cout << "ClapTrap " << this->name << " attacks " << target << ", causing " << this->Attack_damage << " points of damage!" << std::endl;
 }
 
-void ClapTrap::takeDamage(unsigned int amount)
+void ClapTrap::takeDamage(unsigned int amount) // peux prendre des degats negatif?
 {
 	this->Hit_points -= amount;
 	std::cout << "ClapTrap " << this->name << " as taken " << amount << " damage, " << this->Hit_points << " left" << std::endl;

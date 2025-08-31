@@ -1,6 +1,25 @@
 #include "ScavTrap.hpp"
 #include "ClapTrap.hpp"
 
+ScavTrap::ScavTrap()
+{
+	this->name = "ScavTrap";
+	this->Hit_points = 100;
+	this->Energy_points = 50;
+	this->Attack_damage = 20;
+	std::cout << "ScavTrap " << this->name << " Default Constructor called" << std::endl;
+}
+
+ScavTrap::ScavTrap(ScavTrap &other) : ClapTrap()
+{
+	this->name = other.name;
+	this->Hit_points = other.Hit_points;
+	this->Energy_points = other.Energy_points;
+	this->Attack_damage = other.Attack_damage;
+	std::cout << "ScavTrap " << "Copy called" << std::endl;
+
+}
+
 ScavTrap::ScavTrap(std::string str) : ClapTrap(str)
 {
 	this->name = str;
@@ -32,4 +51,14 @@ void ScavTrap::attack(const std::string& target)
 	}
 	this->Energy_points--;
 	std::cout << "ScavTrap " << this->name << " attacks " << target << ", causing " << this->Attack_damage << " points of damage!" << std::endl;
+}
+
+ScavTrap& ScavTrap::operator=(ScavTrap &other)
+{
+	this->name = other.name;
+	this->Hit_points = other.Hit_points;
+	this->Energy_points = other.Energy_points;
+	this->Attack_damage = other.Attack_damage;
+	std::cout << "Operator called" << std::endl;
+	return (*this);
 }
