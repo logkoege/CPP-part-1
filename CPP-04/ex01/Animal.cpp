@@ -5,7 +5,6 @@ Animal::Animal() : type("Animal")
 	std::cout << "Animal Constructor called" << std::endl;
 }
 
-
 std::string Animal::getType() const
 {
 	return(type);
