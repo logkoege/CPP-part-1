@@ -16,7 +16,7 @@ void Dog::makeSound() const
 	std::cout << "bark" << std::endl;
 }
 
-Dog::Dog(Dog const &other)
+Dog::Dog(Dog const &other) : Animal()
 {
 	this->type = other.type;
 	std::cout << "Dog Copy constructor called" << std::endl;

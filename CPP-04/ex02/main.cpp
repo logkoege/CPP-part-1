@@ -3,7 +3,7 @@
 
 int main()
 {
-	// AAnimal a; // abstraite
+	// AAnimal a; // abstraite: ne doit pas compiler
 
 	AAnimal* dog = new Dog();
 	AAnimal* cat = new Cat();

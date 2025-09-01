@@ -6,7 +6,7 @@ SRC = main.cpp\
 	AAnimal.cpp\
 	Brain.cpp
 
-CPPFLAGS = -Werror -Wall -Wextra -std=c++98 -g
+CPPFLAGS = -Werror -Wall -Wextra -std=c++98
 
 OBJ = $(SRC:.cpp=.o)
 

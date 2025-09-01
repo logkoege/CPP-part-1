@@ -3,11 +3,11 @@
 Dog::Dog() : Animal()
 {
 	this->type = "Dog";
-	this->brain = new Brain;
+	this->brain = new Brain();
 	std::cout << type << " Constructor called" << std::endl;
 }
 
-Dog::Dog(Dog const &other)
+Dog::Dog(Dog const &other) : Animal()
 {
 	this->type = other.type;
 	this->brain = new Brain(*other.brain);

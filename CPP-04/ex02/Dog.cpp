@@ -7,7 +7,7 @@ Dog::Dog() : AAnimal()
 	std::cout << type << " Constructor called" << std::endl;
 }
 
-Dog::Dog(Dog const &other)
+Dog::Dog(Dog const &other): AAnimal()
 {
 	this->type = other.type;
 	this->brain = new Brain(*other.brain);

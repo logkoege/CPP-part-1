@@ -13,10 +13,10 @@ WrongCat::~WrongCat()
 
 void WrongCat::makeSound() const
 {
-	std::cout << "waf" << std::endl;
+	std::cout << "wrong meow" << std::endl;
 }
 
-WrongCat::WrongCat(WrongCat const &other)
+WrongCat::WrongCat(WrongCat const &other) : WrongAnimal()
 {
 	this->type = other.type;
 	std::cout << "WrongCat Copy called" << std::endl;

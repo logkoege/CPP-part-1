@@ -7,7 +7,7 @@ Cat::Cat() : AAnimal()
 	std::cout << type << " Constructor called" << std::endl;
 }
 
-Cat::Cat(Cat const &other)
+Cat::Cat(Cat const &other) : AAnimal()
 {
 	this->type = other.type;
 	this->brain = new Brain(*other.brain);

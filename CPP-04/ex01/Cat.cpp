@@ -3,11 +3,11 @@
 Cat::Cat() : Animal()
 {
 	this->type = "Cat";
-	this->brain = new Brain;
+	this->brain = new Brain();
 	std::cout << type << " Constructor called" << std::endl;
 }
 
-Cat::Cat(Cat const &other)
+Cat::Cat(Cat const &other) : Animal()
 {
 	this->type = other.type;
 	this->brain = new Brain(*other.brain);

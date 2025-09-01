@@ -24,13 +24,13 @@ Animal::~Animal()
 Animal::Animal(Animal const &other)
 {
 	this->type = other.type;
-	std::cout << "Animal Copy called" << std::endl;
+	std::cout << "Animal Copy Constructor called" << std::endl;
 }
 
 Animal &Animal::operator=(Animal const &other)
 {
 	if (this != &other)
 		this->type = other.type;
-	std::cout << "operator called" << std::endl;
+	std::cout << "operator= called" << std::endl;
 	return (*this);
 }

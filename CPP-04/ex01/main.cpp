@@ -2,7 +2,7 @@
 #include "Cat.hpp"
 
 int main() {
-	int size = 4;
+	const int size = 4;
 	Animal* animals[size];
 
 	std::cout << "\n--- animal tab creation ---\n" << std::endl;
@@ -28,4 +28,7 @@ int main() {
 	Dog copy (basic);
 	Dog assign;
 	assign = basic;
+	std::cout << "Basic address: " << &basic << std::endl;
+	std::cout << "Copy address: " << &copy << std::endl;
+	std::cout << "Assign address: " << &assign << std::endl;
 }

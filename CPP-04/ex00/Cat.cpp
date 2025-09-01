@@ -16,7 +16,7 @@ void Cat::makeSound() const
 	std::cout << "meow" << std::endl;
 }
 
-Cat::Cat(Cat const &other)
+Cat::Cat(Cat const &other) : Animal()
 {
 	this->type = other.type;
 	std::cout << "Cat Copy constructor called" << std::endl;
