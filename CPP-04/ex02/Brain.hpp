@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
 class Brain
 {

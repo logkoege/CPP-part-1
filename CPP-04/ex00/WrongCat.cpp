@@ -15,3 +15,17 @@ void WrongCat::makeSound() const
 {
 	std::cout << "waf" << std::endl;
 }
+
+WrongCat::WrongCat(WrongCat const &other)
+{
+	this->type = other.type;
+	std::cout << "WrongCat Copy called" << std::endl;
+}
+
+WrongCat &WrongCat::operator=(WrongCat const &other)
+{
+	if (this != &other)
+		this->type = other.type;
+	std::cout << "operator called" << std::endl;
+	return (*this);
+}

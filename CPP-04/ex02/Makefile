@@ -1,11 +1,10 @@
-NAME = animal
+NAME = abstract
 CC = c++
 SRC = main.cpp\
 	Dog.cpp\
 	Cat.cpp\
-	Animal.cpp\
-	WrongCat.cpp\
-	WrongAnimal.cpp
+	AAnimal.cpp\
+	Brain.cpp
 
 CPPFLAGS = -Werror -Wall -Wextra -std=c++98 -g
 

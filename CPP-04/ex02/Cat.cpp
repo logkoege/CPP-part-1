@@ -1,6 +1,6 @@
 #include "Cat.hpp"
 
-Cat::Cat() : Animal()
+Cat::Cat() : AAnimal()
 {
 	this->type = "Cat";
 	this->brain = new Brain;

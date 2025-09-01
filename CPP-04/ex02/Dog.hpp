@@ -1,9 +1,9 @@
 #pragma once
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 
-class Dog : public Animal
+class Dog : public AAnimal
 {
 	private :
 		Brain *brain;
@@ -12,7 +12,7 @@ class Dog : public Animal
 		Dog();
 		Dog(Dog const &other);
 		~Dog();
-		Dog &operator=(Dog const &other);
+		Dog &operator=(Dog &other);
 
 		void makeSound() const;
 };

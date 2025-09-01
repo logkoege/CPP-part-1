@@ -20,7 +20,7 @@ Attack_damage(0)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Constructor called" << std::endl;
+	std::cout << "Destructor called" << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(ClapTrap &other)

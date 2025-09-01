@@ -15,3 +15,17 @@ void Cat::makeSound() const
 {
 	std::cout << "meow" << std::endl;
 }
+
+Cat::Cat(Cat const &other)
+{
+	this->type = other.type;
+	std::cout << "Cat Copy constructor called" << std::endl;
+}
+
+Cat &Cat::operator=(Cat const &other)
+{
+	if (this != &other)
+		this->type = other.type;
+	std::cout << "Cat operator= called" << std::endl;
+	return (*this);
+}

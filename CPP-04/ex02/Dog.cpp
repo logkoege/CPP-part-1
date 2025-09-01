@@ -1,26 +1,26 @@
-#include "Cat.hpp"
+#include "Dog.hpp"
 
-Cat::Cat() : Animal()
+Dog::Dog() : AAnimal()
 {
-	this->type = "Cat";
+	this->type = "Dog";
 	this->brain = new Brain;
 	std::cout << type << " Constructor called" << std::endl;
 }
 
-Cat::Cat(Cat const &other)
+Dog::Dog(Dog const &other)
 {
 	this->type = other.type;
 	this->brain = new Brain(*other.brain);
-	std::cout << "Cat Copy called" << std::endl;
+	std::cout << "Dog Copy called" << std::endl;
 }
 
-Cat::~Cat()
+Dog::~Dog()
 {
 	delete this->brain;
 	std::cout << type << " Destructor called" << std::endl;
 }
 
-Cat &Cat::operator=(Cat const &other)
+Dog &Dog::operator=(Dog &other)
 {
 	if (this != &other)
 	{
@@ -32,7 +32,7 @@ Cat &Cat::operator=(Cat const &other)
 	return (*this);
 }
 
-void Cat::makeSound() const
+void Dog::makeSound() const
 {
-	std::cout << "meow" << std::endl;
+	std::cout << "bark" << std::endl;
 }

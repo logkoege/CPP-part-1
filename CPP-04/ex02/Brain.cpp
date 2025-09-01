@@ -1,5 +1,6 @@
 #include "Brain.hpp"
 
+
 Brain::Brain()
 {
 	int i = 0;
