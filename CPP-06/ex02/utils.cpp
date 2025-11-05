@@ -22,7 +22,7 @@ void identify(Base &p)
 		std::cout << "ref is a A" << std::endl;
 		return;
 	}
-	catch (std::exception& e)
+	catch (std::exception &e)
 	{}
 
 	try
@@ -32,7 +32,7 @@ void identify(Base &p)
 		std::cout << "ref is a B" << std::endl;
 		return;
 	}
-	catch (std::exception& e)
+	catch (std::exception &e)
 	{}
 
 	try
@@ -41,7 +41,7 @@ void identify(Base &p)
 		(void)c;
 		std::cout << "ref is a C" << std::endl;
 	}
-	catch (std::exception& e)
+	catch (std::exception &e)
 	{}
 }
 
