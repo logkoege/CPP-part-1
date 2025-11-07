@@ -3,6 +3,7 @@
 Scalar::Scalar()
 {}
 
+
 Scalar::~Scalar()
 {}
 Scalar& Scalar::operator=(Scalar &other)
