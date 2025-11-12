@@ -8,7 +8,7 @@
 class Scalar
 {
 	public:
-		static void convert(const std::string &literal);
+		static void convert(std::string literal);
 
 	private:
 		Scalar();
@@ -16,9 +16,9 @@ class Scalar
 		Scalar &operator=(Scalar &other);
 		~Scalar();
 
-		static bool isChar(const std::string &literal);
-		static bool isInt(const std::string &literal);
-		static bool isFloat(const std::string &literal);
-		static bool isDouble(const std::string &literal);
-		static bool isPseudoLiteral(const std::string &literal);
+		static bool isChar(std::string &literal);
+		static bool isInt(std::string &literal);
+		static bool isFloat(std::string &literal);
+		static bool isDouble(std::string &literal);
+		static bool isPseudoLiteral(std::string &literal);
 };

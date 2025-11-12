@@ -3,7 +3,6 @@
 Scalar::Scalar()
 {}
 
-
 Scalar::~Scalar()
 {}
 Scalar& Scalar::operator=(Scalar &other)
@@ -17,7 +16,7 @@ Scalar::Scalar(Scalar &other)
 	(void)other;
 }
 
-bool Scalar::isChar(const std::string &literal)
+bool Scalar::isChar(std::string &literal)
 {
 	if (literal.empty())
 		return false;
@@ -26,7 +25,7 @@ bool Scalar::isChar(const std::string &literal)
 	return false;
 }
 
-bool Scalar::isInt(const std::string &literal)
+bool Scalar::isInt(std::string &literal)
 {
 	size_t i = 0;
 
@@ -45,7 +44,7 @@ bool Scalar::isInt(const std::string &literal)
 	return true;
 }
 
-bool Scalar::isFloat(const std::string &literal)
+bool Scalar::isFloat(std::string &literal)
 {
 	
 	if (literal.empty())
@@ -63,7 +62,7 @@ bool Scalar::isFloat(const std::string &literal)
 	return true;
 }
 
-bool Scalar::isDouble(const std::string &literal)
+bool Scalar::isDouble(std::string &literal)
 {
 	if (literal.empty())
 	return false;
@@ -81,7 +80,7 @@ bool Scalar::isDouble(const std::string &literal)
 	return true;
 }
 
-bool Scalar::isPseudoLiteral(const std::string &literal)
+bool Scalar::isPseudoLiteral(std::string &literal)
 {
 	if (literal == "nan")
 		return true;
@@ -98,7 +97,7 @@ bool Scalar::isPseudoLiteral(const std::string &literal)
 	return false;
 }
 
-void Scalar::convert(const std::string &literal)
+void Scalar::convert(std::string literal)
 {
 	double d = 0.0;
 

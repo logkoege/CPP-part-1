@@ -11,7 +11,7 @@ int main()
 		std::cout << f << std::endl;
 	}
 	catch (const std::exception &e) {
-		std::cerr << "Erreur : " << e.what() << std::endl;
+		std::cout << "Erreur : " << e.what() << std::endl;
 	}
 
 	try
@@ -23,7 +23,7 @@ int main()
 	}
 	catch (const std::exception &e)
 	{
-		std::cerr << "Erreur : " << e.what() << std::endl;
+		std::cout << "Erreur : " << e.what() << std::endl;
 	}
 
 	try
@@ -35,7 +35,7 @@ int main()
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cout << e.what() << std::endl;
 	}
 
 	try
@@ -47,7 +47,7 @@ int main()
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cout << e.what() << std::endl;
 	}
 	return 0;
 }
