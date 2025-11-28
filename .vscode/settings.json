@@ -57,6 +57,15 @@
 		"span": "cpp",
 		"text_encoding": "cpp",
 		"cinttypes": "cpp",
-		"variant": "cpp"
+		"variant": "cpp",
+		"__bit_reference": "cpp",
+		"__config": "cpp",
+		"__locale": "cpp",
+		"__threading_support": "cpp",
+		"__verbose_abort": "cpp",
+		"bitset": "cpp",
+		"ios": "cpp",
+		"locale": "cpp",
+		"mutex": "cpp"
 	}
 }
