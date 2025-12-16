@@ -47,7 +47,6 @@ void identify(Base &p)
 
 Base* generate()
 {
-	srand(time(0));
 	int i = 0;
 	i = (rand() % 3) +1;
 	if (i == 1)
