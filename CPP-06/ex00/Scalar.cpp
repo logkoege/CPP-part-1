@@ -106,8 +106,18 @@ void Scalar::convert(std::string literal)
 		std::cout << "empty error" << std::endl;
 		return ;
 	}
-	if (isChar(literal) || isInt(literal) || isFloat(literal) || isDouble(literal) || isPseudoLiteral(literal))
-		d = std::stod(literal);
+	if (isPseudoLiteral(literal))
+	{
+		d = std::strtod(literal.c_str(), NULL);
+	}
+	else if (isChar(literal))
+	{
+		d = static_cast<double>(literal[0]);
+	}
+	else if (isInt(literal) || isFloat(literal) || isDouble(literal))
+	{
+		d = std::strtod(literal.c_str(), NULL);
+	}
 	else
 	{
 		std::cout << "unknown literal" << std::endl;
