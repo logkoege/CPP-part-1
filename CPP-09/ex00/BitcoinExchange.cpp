@@ -36,7 +36,7 @@ void BitcoinExchange::processFile(std::string filename)
 		size_t pipe = line.find('|');
 		if (pipe == std::string::npos)
 		{
-			std::cout << "Error: bad input => " << line << std::endl;
+			std::cerr << "Error: bad input => " << line << std::endl;
 			continue;
 		}
 
@@ -60,13 +60,13 @@ void BitcoinExchange::processFile(std::string filename)
 
 			if (amount < 0)
 			{
-				std::cout << "Error: not a positive number." << std::endl;
+				std::cerr << "Error: not a positive number." << std::endl;
 				continue;
 			}
 
 			if (amount > 1000)
 			{
-				std::cout << "Error: too large a number." << std::endl;
+				std::cerr << "Error: too large a number." << std::endl;
 				continue;
 			}
 
