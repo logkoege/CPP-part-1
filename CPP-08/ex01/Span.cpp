@@ -9,6 +9,18 @@ Span::Span(int n) : N(n)
 Span::~Span()
 {}
 
+Span &Span::operator=(Span const &other)
+{
+	if(this != &other)
+		this->N = other.N;
+	return(*this);
+}
+Span::Span(const Span &other)
+{
+	*this = other;
+}
+
+
 int	Span::shortestSpan()
 {
 	if (this->victor.size() < 2)

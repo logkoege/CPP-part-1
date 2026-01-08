@@ -17,8 +17,8 @@ class Span
 		Span();
 		~Span();
 		Span(int n);
-		//copy
-		//=
+		Span &operator=(Span const &other);
+		Span(const Span &other);
 
 		template<typename T>
 		void insertt(T begin, T end)
