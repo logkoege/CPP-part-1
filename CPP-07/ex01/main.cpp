@@ -3,18 +3,19 @@
 void f(char &str)
 {
 	if ((str % 2) == 0)
-		str = 'c';
+		std::cout << ":(" << std::endl;
 	else
-		str = 'a';
+		std::cout << ";)" << std::endl;
 }
 
 int main()
 {
-	std::string str = "pipi";
-	std::string str2 = "Hello World";
-	::iter(str, str.size(), f);
-	::iter(str2, str2.size(), f);
-	std::cout << "str = " << str << std::endl;
-	std::cout << "str2 = " << str2 << std::endl;
+	std::string test1 = "hii";
+	std::string test2 = "Hello World";
+	std::cout << "test1 = " << test1 << std::endl << std::endl;
+	::iter(test1, 3, f);
+	std::cout << std::endl;
+	std::cout << "test2 = " << test2 << std::endl << std::endl;
+	::iter(test2, 11, f);
 	return 0;
 }

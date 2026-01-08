@@ -5,14 +5,18 @@ SRC = main.cpp\
 	ScavTrap.cpp\
 	FragTrap.cpp\
 
-CPPFLAGS = -Werror -Wall -Wextra -std=c++98 -g
+CPPFLAGS = -Werror -Wall -Wextra -std=c++98
 
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
+
 $(NAME): $(OBJ)
 	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
+
+%.o: %.cpp
+	$(CC) $(CPPFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJ)

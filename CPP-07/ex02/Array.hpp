@@ -1,6 +1,9 @@
 #pragma once
 
-# include <stdexcept>
+#include <stdexcept>
+#include <cstdlib> 
+#include <ctime>
+#include <iostream>
 
 template <typename T>
 class Array

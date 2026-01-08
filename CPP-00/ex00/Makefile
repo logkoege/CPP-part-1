@@ -13,14 +13,19 @@
 NAME = megaphone
 CC = g++
 SRC = megaphone.cpp
+
 CPPFLAGS = -Werror -Wall -Wextra -std=c++98
 
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
+
 $(NAME): $(OBJ)
-	$(CC) $(CPPFLAGS) $(OBJ) $(MLX) -o $(NAME)
+	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
+
+%.o: %.cpp
+	$(CC) $(CPPFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJ)
