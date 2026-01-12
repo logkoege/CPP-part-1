@@ -26,11 +26,12 @@ void BitcoinExchange::processFile(std::string filename)
 	}
 
 	std::string line;
-	std::getline(file, line);
 
 	while (std::getline(file, line))
 	{
 		if (line.empty())
+			continue;
+		if (line == "date | value")
 			continue;
 
 		size_t pipe = line.find('|');
@@ -57,6 +58,16 @@ void BitcoinExchange::processFile(std::string filename)
 		{
 			int key = convertDateToInt(date);
 			float amount = std::strtof(value.c_str(), NULL);
+
+			// if (std::isdigit(*value.c_str()))
+			// {
+			// 	std::cerr <<"Error : not digit" << std::endl;
+			// 	continue;
+			// }
+			if (key == -1)
+			{
+				continue;
+			}
 
 			if (amount < 0)
 			{
@@ -87,6 +98,32 @@ int BitcoinExchange::convertDateToInt(std::string date)
 	int year = std::atoi(date.substr(0, 4).c_str());
 	int month = std::atoi(date.substr(5, 2).c_str());
 	int day = std::atoi(date.substr(8, 2).c_str());
+
+	if (month < 1 || month > 12 || year < 0 || year > 9999 || day < 1 || day > 31)
+	{
+		std::cerr << "error : date (day, month or year)" << std::endl;
+		return -1;
+	}
+	if(year % 4 != 0 && month == 2 && day == 29)
+	{
+		std::cerr << "error : bissextile year" << std::endl;
+		return -1;
+	}
+	if (day > 31)
+	{
+		std::cerr << "error : day error" << std::endl;
+		return -1;
+	}
+	if (day == 31 && month != 1 && month != 3 && month != 5 && month != 7 && month != 8 && month != 10 && month != 12)
+	{
+		std::cerr << "error : 31" << std::endl;
+		return -1;
+	}
+	if (day == 30 && month == 2)
+	{
+		std::cout << "error : feb 30" << std::endl;
+		return -1;
+	}
 	return year * 10000 + month * 100 + day;
 }
 
@@ -104,7 +141,6 @@ BitcoinExchange::BitcoinExchange(std::string filename)
 
 		int key = convertDateToInt(date);
 		float rate = std::strtof(value.c_str(), NULL);
-
 		_map[key] = rate;
 	}
 }
