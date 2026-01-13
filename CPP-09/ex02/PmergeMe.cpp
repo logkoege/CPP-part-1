@@ -7,6 +7,15 @@
 
 PmergeMe::PmergeMe() {}
 PmergeMe::~PmergeMe() {}
+PmergeMe::PmergeMe(PmergeMe &other)
+{
+	(void)other;
+}
+PmergeMe& PmergeMe::operator=(PmergeMe &other)
+{
+	(void)other;
+	return (*this);
+}
 
 void PmergeMe::parseInput(int argc, char **argv)
 {
@@ -34,7 +43,9 @@ void PmergeMe::parseInput(int argc, char **argv)
 
 void PmergeMe::mergeVec(std::vector<int> &left, std::vector<int> &right, std::vector<int> &v)
 {
-    size_t i = 0, j = 0, k = 0;
+    size_t i = 0;
+    size_t j = 0;
+    size_t k = 0;
 
     while (i < left.size() && j < right.size())
     {
@@ -67,7 +78,9 @@ void PmergeMe::fordJohnsonVec(std::vector<int> &v)
 
 void PmergeMe::mergeDeq(std::deque<int> &left, std::deque<int> &right, std::deque<int> &d)
 {
-    size_t i = 0, j = 0, k = 0;
+    size_t i = 0;
+    size_t j = 0;
+    size_t k = 0;
 
     while (i < left.size() && j < right.size())
     {
@@ -98,7 +111,7 @@ void PmergeMe::fordJohnsonDeq(std::deque<int> &d)
 }
 
 
-void PmergeMe::displayBefore() const
+void PmergeMe::printBefore() const
 {
     std::cout << "Before: ";
     for (size_t i = 0; i < _vec.size(); i++)
@@ -106,7 +119,7 @@ void PmergeMe::displayBefore() const
     std::cout << std::endl;
 }
 
-void PmergeMe::displayAfter() const
+void PmergeMe::printAfter() const
 {
     std::cout << "After:  ";
     for (size_t i = 0; i < _vec.size(); i++)
@@ -119,7 +132,7 @@ void PmergeMe::process(int argc, char **argv)
 {
     parseInput(argc, argv);
 
-    displayBefore();
+    printBefore();
 
     clock_t startVec = clock();
     fordJohnsonVec(_vec);
@@ -129,7 +142,7 @@ void PmergeMe::process(int argc, char **argv)
     fordJohnsonDeq(_deq);
     clock_t endDeq = clock();
 
-    displayAfter();
+    printAfter();
 
     double timeVec = (double)(endVec - startVec) / CLOCKS_PER_SEC * 1000000;
     double timeDeq = (double)(endDeq - startDeq) / CLOCKS_PER_SEC * 1000000;

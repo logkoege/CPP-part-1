@@ -9,9 +9,9 @@
 
 class RPN
 {
-public:
-	RPN();
-	~RPN();
+	public:
+		RPN();
+		~RPN();
 };
 
 int evaluate(std::string invert);

@@ -19,7 +19,7 @@ int evaluate(std::string invert)
 		if (invert[i] == '+' || invert[i] == '-' || invert[i] == '*' || invert[i] == '/')
 		{
 			if(stack.size() <= 1)
-				throw std::logic_error("error syntax");
+				throw std::logic_error("Error syntax");
 			else
 			{
 				b = stack.top();
@@ -43,7 +43,7 @@ int evaluate(std::string invert)
 		i++;
 	}
 	if (stack.size() != 1)
-		throw std::logic_error("error calc");
+		throw std::logic_error("Error calc");
 	result = stack.top();
 	return (result);
 }

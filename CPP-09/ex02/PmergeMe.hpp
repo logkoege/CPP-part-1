@@ -10,6 +10,8 @@ class PmergeMe
 public:
     PmergeMe();
     ~PmergeMe();
+    PmergeMe(PmergeMe &other);
+	PmergeMe& operator=(PmergeMe &other);
 
     void process(int argc, char **argv);
 
@@ -25,8 +27,8 @@ private:
     void mergeVec(std::vector<int> &left, std::vector<int> &right, std::vector<int> &v);
     void mergeDeq(std::deque<int> &left, std::deque<int> &right, std::deque<int> &d);
 
-    void displayBefore() const;
-    void displayAfter() const;
+    void printBefore() const;
+    void printAfter() const;
 };
 
 #endif

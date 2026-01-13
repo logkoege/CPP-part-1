@@ -4,7 +4,7 @@ int main(int ac, char **av)
 {
 	if (ac != 2)
 	{
-		std::cerr << "error: wrong arg number" << std::endl;
+		std::cerr << "Error: wrong arg number" << std::endl;
 		return (1);
 	}
 	try
@@ -15,7 +15,7 @@ int main(int ac, char **av)
 	}
 	catch(std::exception& e)
 	{
-		std::cerr << "error" << std::endl;
+		std::cerr << "Error" << std::endl;
 	}
 	return (0);
 }

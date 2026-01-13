@@ -8,7 +8,6 @@ BitcoinExchange::~BitcoinExchange()
 BitcoinExchange::BitcoinExchange(BitcoinExchange &other)
 {
 	(void)other;
-	
 }
 BitcoinExchange& BitcoinExchange::operator=(BitcoinExchange &other)
 {
@@ -99,12 +98,12 @@ int BitcoinExchange::convertDateToInt(std::string date)
 	int month = std::atoi(date.substr(5, 2).c_str());
 	int day = std::atoi(date.substr(8, 2).c_str());
 
-	if (month < 1 || month > 12 || year < 0 || year > 9999 || day < 1 || day > 31)
+	if (month < 1 || month > 12 || year < 2000 || year > 2050 || day < 1 || day > 31)
 	{
 		std::cerr << "error : date (day, month or year)" << std::endl;
 		return -1;
 	}
-	if(year % 4 != 0 && month == 2 && day == 29)
+	if(year % 4 != 0 && year % 400 != 0 && month == 2 && day == 29)
 	{
 		std::cerr << "error : bissextile year" << std::endl;
 		return -1;
