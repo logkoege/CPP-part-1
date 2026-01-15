@@ -38,6 +38,7 @@ int evaluate(std::string invert)
 		}
 		if (std::isdigit(invert[i]))
 		{
+			std::cout << invert[i] << std::endl;
 			stack.push(atoi(invert.c_str() + i));
 		}
 		i++;
@@ -47,5 +48,3 @@ int evaluate(std::string invert)
 	result = stack.top();
 	return (result);
 }
-
-

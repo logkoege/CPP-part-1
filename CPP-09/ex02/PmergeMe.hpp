@@ -24,8 +24,8 @@ private:
     void fordJohnsonVec(std::vector<int> &v);
     void fordJohnsonDeq(std::deque<int> &d);
 
-    void mergeVec(std::vector<int> &left, std::vector<int> &right, std::vector<int> &v);
-    void mergeDeq(std::deque<int> &left, std::deque<int> &right, std::deque<int> &d);
+    void insertSortedVec(std::vector<int> &v, int value);
+    void insertSortedDeq(std::deque<int> &d, int value);
 
     void printBefore() const;
     void printAfter() const;

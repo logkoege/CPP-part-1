@@ -17,6 +17,23 @@ PmergeMe& PmergeMe::operator=(PmergeMe &other)
 	return (*this);
 }
 
+void PmergeMe::insertSortedVec(std::vector<int> &v, int value)
+{
+    size_t i = 0;
+    while (i < v.size() && v[i] < value)
+        i++;
+    v.insert(v.begin() + i, value);
+}
+
+void PmergeMe::insertSortedDeq(std::deque<int> &d, int value)
+{
+    size_t i = 0;
+    while (i < d.size() && d[i] < value)
+        i++;
+    d.insert(d.begin() + i, value);
+}
+
+
 void PmergeMe::parseInput(int argc, char **argv)
 {
     for (int i = 1; i < argc; i++)
@@ -41,73 +58,94 @@ void PmergeMe::parseInput(int argc, char **argv)
 }
 
 
-void PmergeMe::mergeVec(std::vector<int> &left, std::vector<int> &right, std::vector<int> &v)
-{
-    size_t i = 0;
-    size_t j = 0;
-    size_t k = 0;
-
-    while (i < left.size() && j < right.size())
-    {
-        if (left[i] <= right[j])
-            v[k++] = left[i++];
-        else
-            v[k++] = right[j++];
-    }
-    while (i < left.size())
-        v[k++] = left[i++];
-    while (j < right.size())
-        v[k++] = right[j++];
-}
-
-
 void PmergeMe::fordJohnsonVec(std::vector<int> &v)
 {
     if (v.size() <= 1)
         return;
-
-    size_t mid = v.size() / 2;
-    std::vector<int> left(v.begin(), v.begin() + mid);
-    std::vector<int> right(v.begin() + mid, v.end());
-
-    fordJohnsonVec(left);
-    fordJohnsonVec(right);
-    mergeVec(left, right, v);
-}
-
-
-void PmergeMe::mergeDeq(std::deque<int> &left, std::deque<int> &right, std::deque<int> &d)
-{
+    int last;
+    bool haslast = false;
     size_t i = 0;
-    size_t j = 0;
     size_t k = 0;
-
-    while (i < left.size() && j < right.size())
+    std::vector<int> low;
+    std::vector<int> big;
+    if (v.size() % 2 != 0)
     {
-        if (left[i] <= right[j])
-            d[k++] = left[i++];
-        else
-            d[k++] = right[j++];
+        haslast = true;
+        last = v[v.size() - 1];
+        v.pop_back();
+        std::cout << "last = " << last << std::endl;
     }
-    while (i < left.size())
-        d[k++] = left[i++];
-    while (j < right.size())
-        d[k++] = right[j++];
-}
+    while (i + 1 < v.size())
+    {
+        if (v[i] > v[i + 1])
+        {
+            low.push_back(v[i + 1]);
+            big.push_back(v[i]);
+        }
+        else
+        {
+            low.push_back(v[i]);
+            big.push_back(v[i + 1]);
+        }
+        i += 2;
+        k++;
+    }
+    fordJohnsonVec(low);
+    i = 0;
+    while (i< big.size())
+    {
+        insertSortedVec(low, big[i]);
+        i++;
+    }
 
+    if (haslast)
+        insertSortedVec(low, last);
+    v = low; 
+}
 
 void PmergeMe::fordJohnsonDeq(std::deque<int> &d)
 {
     if (d.size() <= 1)
         return;
+    int last;
+    bool haslast = false;
+    size_t i = 0;
+    size_t k = 0;
+    std::deque<int> low;
+    std::deque<int> big;
+    if (d.size() % 2 != 0)
+    {
+        haslast = true;
+        last = d[d.size() - 1];
+        d.pop_back();
+        std::cout << "last = " << last << std::endl;
+    }
+    while (i + 1 < d.size())
+    {
+        if (d[i] > d[i + 1])
+        {
+            low.push_back(d[i + 1]);
+            big.push_back(d[i]);
+        }
+        else
+        {
+            low.push_back(d[i]);
+            big.push_back(d[i + 1]);
+        }
+        i += 2;
+        k++;
+    }
+    fordJohnsonDeq(low);
+    i = 0;
+    while (i < big.size())
+    {
+        insertSortedDeq(low, big[i]);
+        i++;
+    }
 
-    size_t mid = d.size() / 2;
-    std::deque<int> left(d.begin(), d.begin() + mid);
-    std::deque<int> right(d.begin() + mid, d.end());
-
-    fordJohnsonDeq(left);
-    fordJohnsonDeq(right);
-    mergeDeq(left, right, d);
+    if (haslast)
+        insertSortedDeq(low, last);
+    d = low; 
 }
 
 
@@ -144,11 +182,11 @@ void PmergeMe::process(int argc, char **argv)
 
     printAfter();
 
-    double timeVec = (double)(endVec - startVec) / CLOCKS_PER_SEC * 1000000;
-    double timeDeq = (double)(endDeq - startDeq) / CLOCKS_PER_SEC * 1000000;
+    double timeVec = (double)(endVec - startVec) / CLOCKS_PER_SEC * 100000;
+    double timeDeq = (double)(endDeq - startDeq) / CLOCKS_PER_SEC * 100000;
 
     std::cout << "Time to process a range of " << _vec.size()
-              << " elements with std::vector : "
+              << " elements with std::vec : "
               << timeVec << " us" << std::endl;
 
     std::cout << "Time to process a range of " << _deq.size()
