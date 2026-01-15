@@ -6,6 +6,16 @@ RPN::RPN()
 RPN::~RPN()
 {}
 
+RPN::RPN(RPN &other)
+{
+	(void)other;
+}
+RPN& RPN::operator=(RPN &other)
+{
+	(void)other;
+	return (*this);
+}
+
 int evaluate(std::string invert)
 {
 	int result = 0;
@@ -38,7 +48,8 @@ int evaluate(std::string invert)
 		}
 		if (std::isdigit(invert[i]))
 		{
-			std::cout << invert[i] << std::endl;
+			if (atoi(invert.c_str() + i) > 9 || (atoi(invert.c_str() + i) < -9))
+				throw std::logic_error("Error number to big");
 			stack.push(atoi(invert.c_str() + i));
 		}
 		i++;
