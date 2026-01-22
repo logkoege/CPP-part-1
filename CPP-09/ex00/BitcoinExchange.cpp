@@ -20,11 +20,17 @@ void BitcoinExchange::processFile(std::string filename)
 	std::ifstream file(filename.c_str());
 	if (!file.is_open())
 	{
-		std::cout << "Error: could not open input file" << std::endl;
+		std::cerr << "Error: could not open input file" << std::endl;
 		return;
 	}
 
 	std::string line;
+	
+	if (!std::getline(file, line))
+		{
+			std::cerr << "Error: file is empty" << std::endl;
+			return;
+		}
 
 	while (std::getline(file, line))
 	{
@@ -56,21 +62,27 @@ void BitcoinExchange::processFile(std::string filename)
 		try
 		{
 			int key = convertDateToInt(date);
-			float amount = std::strtof(value.c_str(), NULL);
+			
+			size_t i = 0;
 
-			// if (std::isdigit(*value.c_str()))
-			// {
-			// 	std::cerr <<"Error : not digit" << std::endl;
-			// 	continue;
-			// }
+			bool dot = false;
+			while (i < value.size())
+			{
+				if (value[0] == '-')
+					throw std::logic_error("Error : not a positive number.");
+				if (!std::isdigit(value[i]) && value[i] != '.')
+					throw std::logic_error("Error : incorrect digit");
+
+				if (value[i] == '.' && dot == true)
+						throw std::logic_error("Error : incorrect float ");
+				if (value[i] == '.' && dot == false)
+					dot = true;
+				i++;
+			}
+			float amount = std::strtof(value.c_str(), NULL);
+			
 			if (key == -1)
 			{
-				continue;
-			}
-
-			if (amount < 0)
-			{
-				std::cerr << "Error: not a positive number." << std::endl;
 				continue;
 			}
 
@@ -87,13 +99,18 @@ void BitcoinExchange::processFile(std::string filename)
 		}
 		catch (std::exception &e)
 		{
-			std::cout << e.what() << std::endl;
+			std::cerr << e.what() << std::endl;
 		}
 	}
 }
 
 int BitcoinExchange::convertDateToInt(std::string date)
 {
+	if (date.size() != 10)
+	{
+		std::cerr << "Error : date" << std::endl;
+		return -1;
+	}
 	int year = std::atoi(date.substr(0, 4).c_str());
 	int month = std::atoi(date.substr(5, 2).c_str());
 	int day = std::atoi(date.substr(8, 2).c_str());
@@ -108,11 +125,6 @@ int BitcoinExchange::convertDateToInt(std::string date)
 		std::cerr << "error : bissextile year" << std::endl;
 		return -1;
 	}
-	if (day > 31)
-	{
-		std::cerr << "error : day error" << std::endl;
-		return -1;
-	}
 	if (day == 31 && month != 1 && month != 3 && month != 5 && month != 7 && month != 8 && month != 10 && month != 12)
 	{
 		std::cerr << "error : 31" << std::endl;
@@ -120,7 +132,7 @@ int BitcoinExchange::convertDateToInt(std::string date)
 	}
 	if (day == 30 && month == 2)
 	{
-		std::cout << "error : feb 30" << std::endl;
+		std::cerr << "error : feb 30" << std::endl;
 		return -1;
 	}
 	return year * 10000 + month * 100 + day;

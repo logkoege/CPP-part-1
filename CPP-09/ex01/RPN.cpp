@@ -43,7 +43,11 @@ int evaluate(std::string invert)
 				else if (invert[i] == '*' )
 					stack.push(a * b);
 				else if (invert[i] == '/' )
+				{
+					if (b == 0)
+						throw std::logic_error("cant / with 0");
 					stack.push(a / b);
+				}
 			}
 		}
 		if (std::isdigit(invert[i]))
